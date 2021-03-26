@@ -16,17 +16,19 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Your Value Proposition
+            ## Marijuana Recomender
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
-
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
+            Marijuana can help treat a multitude of diffrent ailments, but one of the harder questions is 
+            what strain is right for you. Do you want the train that helps you be more creative and able to focus, the one 
+            that is supposed to calm you down and make you less anxious, or a certain mix of both. 
+            
+            This app was made to help answer these
+            questions in a meaningful and usable way. It is simple to use and can give a recommendation backed
+            by data on what the user should buy for their personal treatment.
 
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Find out what you need', color='primary'), href='/predictions')
     ],
     md=4,
 )
@@ -37,7 +39,7 @@ fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size
 
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=fig),
+        html.Div(html.Img(src=app.get_asset_url('herb.jpg'), style={'height': '80%', 'width': '80%'}))
     ]
 )
 
